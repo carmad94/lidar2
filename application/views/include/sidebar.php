@@ -26,24 +26,30 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="active">
-                            <a href="index.html">
+                        <li <?php if($active == 'Dashboard') echo "class='active'";?>>
+                            <a href='<?php echo site_url('frontpage')?>' alt="Dashboard" title="Dashboard">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="index.html">
+                        <li <?php if($active == 'Places') echo "class='active'";?>>
+                            <a href='<?php echo site_url('place')?>' alt="Region XI Places" title="Region XI Places">
                                 <!--i class="fa fa-dashboard"></i> <span>Places</span-->
                                 <i class="fa fa-table"></i> <span>Places</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="pages/widgets.html">
+                        <li <?php if($active == 'Terrestrial') echo "class='active'";?>>
+                            <a href='<?php echo site_url('terrestrial')?>' alt="Terrestrial Resources" title="Terrestrial Resources">
                                 <i class="fa fa-table"></i> <span>Terrestrial</span>
                                 <!--i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small-->
                             </a>
                         </li>
-                        <li class="treeview">
+                        <li <?php if($active == 'Aquatic') echo "class='active'";?>>
+                            <a href='<?php echo site_url('aquatic')?>' alt="Aquatic Resources" title="Aquatic Resources">
+                                <i class="fa fa-table"></i> <span>Aquatic</span>
+                                <!--i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small-->
+                            </a>
+                        </li>
+                        <!--li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
                                 <span>Aquatic</span>
@@ -53,8 +59,8 @@
                                 <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
                                 <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
                                 <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
-                            </ul-->
-                        </li>
+                            </ul
+                        </li-->
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
@@ -127,11 +133,11 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Dashboard
-                        <small>Control panel</small>
+                    	<?php echo $active;?>
+                        <!--small>Control panel</small-->
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
+                        <li class="active"><?php echo $active;?></li>
                     </ol>
                 </section>

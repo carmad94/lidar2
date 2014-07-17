@@ -8,14 +8,16 @@
 		{
 			echo "<div class='row'>";
 		}
+		$segment = preg_replace('/\s+/', '', $topic['name']);
+		$segment = strtolower($segment);
 		echo "
 				<div class='col-lg-3 col-xs-6'>
         		<!-- small box -->
-     				 <div class='small-box bg-".$topic['color']."'>
+     				 <div class='small-box bg-green'>
       				    <div class='inner'>
-              				<h3><b>".
-                  				$topic['name']
-              				."</b></h3>
+              				<h3>".
+                  				$topic['count']
+              				."</h3>
              				 <p>".
               				    $topic['name']
               				."</p>
@@ -23,7 +25,7 @@
           				<div class='icon'>
 							<i class='ion ion-".$topic['ion']."'></i>
           				</div>
-						<a href='".site_url($topic['uri'])."' class='small-box-footer'>
+						<a href='".site_url("terrestrial/".$segment)."' class='small-box-footer'>
               				More info <i class='fa fa-arrow-circle-right'></i>
          				</a>
       				</div>
